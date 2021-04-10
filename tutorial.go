@@ -13,14 +13,20 @@ func main() {
 	scanner.Scan()
 	var input string = scanner.Text()
 	fmt.Printf("Hello %s!\n", input)
-	fmt.Print("Enter an integer: ")
+	fmt.Print("Enter your age: ")
 	scanner.Scan()
 	input = scanner.Text()
-	intValue, err := strconv.Atoi(input)
+	age, err := strconv.Atoi(input)
 	if err != nil {
 		fmt.Printf("'%s' is not an integer.\n", input)
 	} else {
-		var result bool = intValue > 10
-		fmt.Printf("%s is greater than 10? %t\n", input, result)
+		var message string = "You can drive %s.\n"
+		if age >= 18 {
+			fmt.Printf(message, "alone")
+		} else if age >= 17 {
+			fmt.Printf(message, "with a fully licensed passenger")
+		} else {
+			fmt.Printf(message, "when you're older")
+		}
 	}
 }
