@@ -16,7 +16,11 @@ func main() {
 	fmt.Print("Enter an integer: ")
 	scanner.Scan()
 	input = scanner.Text()
-	intValue, _ := strconv.Atoi(input)
-	var result bool = intValue > 10
-	fmt.Printf("%s is greater than 10? %t\n", input, result)
+	intValue, err := strconv.Atoi(input)
+	if err != nil {
+		fmt.Printf("'%s' is not an integer.\n", input)
+	} else {
+		var result bool = intValue > 10
+		fmt.Printf("%s is greater than 10? %t\n", input, result)
+	}
 }
