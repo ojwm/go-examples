@@ -20,13 +20,14 @@ func main() {
 	if err != nil {
 		fmt.Printf("'%s' is not an integer.\n", input)
 	} else {
-		var message string = "You can drive %s.\n"
+		var template, message string = "You can drive %s.\n", ""
 		if age >= 18 {
-			fmt.Printf(message, "alone")
+			message = "alone"
 		} else if age >= 17 {
-			fmt.Printf(message, "with a fully licensed passenger")
+			message = "with a fully licensed passenger"
 		} else {
-			fmt.Printf(message, "when you're older")
+			message = "when you're older"
 		}
+		fmt.Printf(template, message)
 	}
 }
