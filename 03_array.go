@@ -5,13 +5,13 @@ import (
 )
 
 func main() {
-	array := []int{1, 2, 3}
+	array := [3]int{1, 2, 3}
 	sum := 0
 	for i := 0; i < len(array); i++ {
 		sum += array[i]
 	}
 	fmt.Println("Array sum:", sum)
-	array2d := [][]int{{1, 2}, {3, 4}, {5, 6}}
+	array2d := [3][2]int{{1, 2}, {3, 4}, {5, 6}}
 	sum = 0
 	for i := 0; i < len(array2d); i++ {
 		for j := 0; j < len(array2d[i]); j++ {
